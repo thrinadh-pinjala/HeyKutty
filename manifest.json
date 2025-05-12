@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Voice Assistant Browser",
+    "description": "A voice-activated assistant that opens websites and interacts with pages.",
+    "version": "1.0",
+    "permissions": ["tabs", "scripting", "microphone", "notifications"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icons/icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+    }
+  }
+  

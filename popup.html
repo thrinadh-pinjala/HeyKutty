@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voice Assistant</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      width: 300px;
+    }
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      padding: 24px 20px;
+      width: 100%;
+      text-align: center;
+    }
+    h2 {
+      margin: 0 0 16px 0;
+      font-size: 1.4em;
+      color: #222;
+      letter-spacing: 1px;
+    }
+    button {
+      background: #4f8cff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    button:hover {
+      background: #2563eb;
+    }
+    #status {
+      font-size: 1em;
+      color: #555;
+    }
+    .fa-microphone {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Voice Assistant</h2>
+    <button id="start"><i class="fa-solid fa-microphone"></i> Start Listening</button>
+    <div id="status">Click the button and speak a command.</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
