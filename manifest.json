@@ -3,17 +3,40 @@
     "name": "Voice Assistant Browser",
     "description": "A voice-activated assistant that opens websites and interacts with pages.",
     "version": "1.0",
-    "permissions": ["tabs", "scripting", "microphone", "notifications"],
+    "permissions": [
+        "tabs",
+        "scripting",
+        "microphone",
+        "notifications",
+        "activeTab",
+        "background"
+    ],
     "host_permissions": ["<all_urls>"],
     "action": {
-      "default_popup": "popup.html",
-      "default_icon": "icons/icon.png"
+        "default_popup": "popup.html",
+        "default_icon": "icons/icon.png"
     },
     "background": {
-      "service_worker": "background.js"
+        "service_worker": "background.js",
+        "type": "module"
     },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"]
+        }
+    ],
     "content_security_policy": {
-      "extension_pages": "script-src 'self'; object-src 'self';"
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    },
+    "commands": {
+        "toggle-listening": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Space",
+                "mac": "Command+Shift+Space"
+            },
+            "description": "Toggle voice listening"
+        }
     }
-  }
+}
   
